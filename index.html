@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2563EB">
+  <title>BlueCV Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <a class="brand" href="#home" aria-label="BlueCV Builder home"><span class="brand-mark" aria-hidden="true">B</span><span><strong>BlueCV</strong> Builder</span></a>
+    <p class="tagline">Build your professional CV in minutes.</p>
+    <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="main-nav" id="mainNav" aria-label="Main navigation"><a href="#home">Home</a><a href="#create">Create CV</a><a href="#templates">Templates</a><a href="#help">Help</a></nav>
+    <button class="button primary header-cta" type="button" data-go-step="1">Create My CV</button>
+  </header>
+  <main id="home">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy"><span class="eyebrow">Free • Private • No sign-up</span><h1 id="heroTitle">Create a Professional CV That Gets Noticed</h1><p>Build a polished, job-ready CV with a modern template and see every change as you type. Your information stays in this browser.</p><div class="hero-actions"><button class="button primary" type="button" data-go-step="1">Start Building My CV</button><a class="button secondary" href="#templates">Explore Templates</a></div></div>
+      <div class="hero-preview" aria-label="Example CV preview"><div class="mock-cv"><div class="mock-sidebar"><div class="mock-avatar"></div><span></span><span></span><span></span></div><div class="mock-main"><div class="mock-name"></div><div class="mock-title"></div><div class="mock-line"></div><div class="mock-heading"></div><div class="mock-lines"></div></div></div></div>
+    </section>
+    <section class="templates-section" id="templates" aria-labelledby="templatesTitle">
+      <div class="section-heading"><div><span class="eyebrow">Choose a starting point</span><h2 id="templatesTitle">Professional CV Templates</h2></div><p>Switch at any time—your content remains unchanged.</p></div>
+      <div class="template-grid" id="templateGrid">
+        <article class="template-card" data-template="professional" tabindex="0" role="button" aria-label="Use Professional CV template" aria-pressed="false"><div class="template-art professional-art"><div class="art-header"></div><div class="art-columns"><div></div><div></div></div></div><h3>Professional</h3><p>Traditional, ATS-friendly, and ideal for corporate roles.</p><button class="button template-button" type="button">Use This Template</button></article>
+        <article class="template-card" data-template="modern" tabindex="0" role="button" aria-label="Use Modern CV template" aria-pressed="false"><div class="template-art modern-art"><div class="art-header"></div><div class="art-row"></div><div class="art-columns"><div></div><div></div></div></div><h3>Modern</h3><p>Clean typography and a balanced contemporary layout.</p><button class="button template-button" type="button">Use This Template</button></article>
+        <article class="template-card" data-template="colorful" tabindex="0" role="button" aria-label="Use Colorful CV template" aria-pressed="false"><div class="template-art colorful-art"><div class="art-sidebar"></div><div class="art-main"></div></div><h3>Colorful</h3><p>Creative accents with a polished portfolio-style presence.</p><button class="button template-button" type="button">Use This Template</button></article>
+        <article class="template-card" data-template="executive" tabindex="0" role="button" aria-label="Use Executive CV template" aria-pressed="false"><div class="template-art executive-art"><div class="art-header"></div><div class="art-rule"></div><div class="art-columns"><div></div><div></div></div></div><h3>Executive</h3><p>Premium, leadership-focused styling for senior roles.</p><button class="button template-button" type="button">Use This Template</button></article>
+      </div>
+    </section>
+    <section class="builder" id="create" aria-labelledby="builderTitle">
+      <h2 class="sr-only" id="builderTitle">CV Builder</h2>
+      <ol class="progress" id="progress" aria-label="CV creation progress"><li class="active" data-stage="1"><span>1</span><strong>Choose Template</strong></li><li data-stage="2"><span>2</span><strong>Enter Details</strong></li><li data-stage="3"><span>3</span><strong>Preview CV</strong></li><li data-stage="4"><span>4</span><strong>Download PDF</strong></li></ol>
+      <div class="workflow-stage" id="stage1">
+        <div class="stage-header"><div><span class="eyebrow">Step 1 of 4</span><h2>Choose your CV template</h2></div><button class="button secondary" type="button" data-go-step="2">Continue</button></div>
+        <div class="template-grid compact" id="builderTemplateGrid"></div>
+      </div>
+      <div class="workflow-stage" id="stage2" hidden>
+        <div class="stage-header"><div><span class="eyebrow">Step 2 of 4</span><h2>Enter your details</h2></div><div class="header-actions"><button class="button secondary" id="clearFormButton" type="button">Clear Form</button><button class="button secondary" id="sampleDataButton" type="button">Fill with Sample Data</button></div></div>
+        <div class="editor-layout">
+          <form class="cv-form" id="cvForm" novalidate>
+            <section class="form-section">
+              <h3>Personal Information</h3>
+              <div class="photo-control"><img id="photoPreview" src="assets/sample-avatar.svg" alt="Profile preview"><div><label class="button secondary file-button" for="photoInput">Upload Photo</label><input id="photoInput" type="file" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp"><button class="text-button" id="removePhoto" type="button">Remove photo</button><small>JPG, PNG or WebP. Maximum 5 MB.</small></div></div>
+              <div class="field-grid">
+                <div class="field"><label for="fullName">Full Name <span aria-hidden="true">*</span></label><input id="fullName" name="fullName" autocomplete="name" required><p class="field-error" id="fullNameError"></p></div>
+                <div class="field"><label for="jobTitle">Professional Title</label><input id="jobTitle" name="jobTitle" autocomplete="organization-title"></div>
+                <div class="field"><label for="email">Email Address</label><input id="email" name="email" type="email" autocomplete="email"><p class="field-error" id="emailError"></p></div>
+                <div class="field"><label for="phone">Phone Number</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+                <div class="field"><label for="location">Current Location</label><input id="location" name="location" autocomplete="address-level2"></div>
+                <div class="field"><label for="linkedin">LinkedIn Profile</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/username"><p class="field-error" id="linkedinError"></p></div>
+                <div class="field"><label for="github">GitHub URL</label><input id="github" name="github" type="url" placeholder="https://github.com/username"><p class="field-error" id="githubError"></p></div>
+                <div class="field"><label for="website">Portfolio Website</label><input id="website" name="website" type="url" placeholder="https://yourportfolio.com"><p class="field-error" id="websiteError"></p></div>
+              </div>
+              <div class="field"><label for="summary">Professional Summary / Career Objective</label><textarea id="summary" name="summary" rows="5" placeholder="Write a concise overview of your experience, strengths, and goals."></textarea></div>
+            </section>
+            <section class="form-section"><div class="section-title-row"><h3>Work Experience</h3><button class="button small secondary" id="addExperience" type="button">+ Add Experience</button></div><div id="experienceList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="section-title-row"><h3>Education</h3><button class="button small secondary" id="addEducation" type="button">+ Add Education</button></div><div id="educationList" class="repeat-list"></div></section>
+            <section class="form-section"><h3>Skills</h3><div class="skill-input-row"><label class="sr-only" for="skillInput">Add a skill</label><input id="skillInput" placeholder="e.g. Data Analysis"><button class="button small primary" id="addSkill" type="button">Add Skill</button></div><div class="skill-tags" id="skillTags"></div></section>
+            <section class="form-section"><div class="section-title-row"><h3>Projects</h3><button class="button small secondary" id="addProject" type="button">+ Add Project</button></div><div id="projectList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="section-title-row"><h3>Certifications</h3><button class="button small secondary" id="addCertification" type="button">+ Add Certification</button></div><div id="certificationList" class="repeat-list"></div></section>
+            <section class="form-section"><div class="section-title-row"><h3>Languages</h3><button class="button small secondary" id="addLanguage" type="button">+ Add Language</button></div><div id="languageList" class="repeat-list"></div></section>
+            <section class="form-section"><h3>Optional Sections</h3><div class="field-grid"><div class="field"><label for="awards">Awards and Achievements</label><textarea id="awards" name="awards" rows="3"></textarea></div><div class="field"><label for="interests">Volunteer Experience / Interests</label><textarea id="interests" name="interests" rows="3"></textarea></div><div class="field"><label for="memberships">Professional Memberships</label><textarea id="memberships" name="memberships" rows="3"></textarea></div><div class="field"><label for="publications">Publications</label><textarea id="publications" name="publications" rows="3"></textarea></div></div><div class="field"><label for="references">References</label><textarea id="references" name="references" rows="3" placeholder="Available on request or list professional references."></textarea></div></section>
+          </form>
+          <aside class="preview-column" aria-label="Live CV preview"><div class="preview-toolbar"><strong>Live Preview</strong><div><button class="text-button" id="refreshPreview" type="button">Refresh</button><button class="text-button" id="changeTemplate" type="button">Change Template</button></div></div><div class="cv-page-shell"><article id="cvPreview" class="cv-preview template-professional" aria-live="polite"></article></div></aside>
+        </div>
+        <div class="stage-actions"><button class="button secondary" type="button" data-go-step="1">Back</button><button class="button primary" type="button" id="previewButton" data-go-step="3">Preview CV</button></div>
+      </div>
+      <div class="workflow-stage" id="stage3" hidden><div class="stage-header"><div><span class="eyebrow">Step 3 of 4</span><h2>Review your CV</h2></div><div class="header-actions"><button class="button secondary" type="button" data-go-step="2">Edit Details</button><button class="button secondary" type="button" data-go-step="1">Change Template</button></div></div><div class="review-layout"><div class="review-summary" id="reviewSummary"></div><div class="cv-page-shell"><article id="cvPreviewReview" class="cv-preview template-professional"></article></div></div><div class="stage-actions"><button class="button secondary" type="button" data-go-step="2">Back</button><button class="button primary" type="button" data-go-step="4">Continue to Download</button></div></div>
+      <div class="workflow-stage" id="stage4" hidden><div class="download-panel"><span class="eyebrow">Step 4 of 4</span><h2>Download your CV</h2><p>Your CV is ready for a print-quality A4 PDF. The browser print dialog will let you choose <strong>Save as PDF</strong>.</p><div id="downloadStatus" class="inline-status" role="status"></div><button class="button primary large" id="downloadPdf" type="button">Download CV as PDF</button><button class="button secondary" type="button" data-go-step="3">Back to Review</button><p class="privacy-note">Data stays in this browser and is never uploaded. Refreshing or closing this page may clear it.</p></div></div>
+    </section>
+    <section class="help-section" id="help" aria-labelledby="helpTitle"><h2 id="helpTitle">Quick help</h2><div class="help-grid"><article><h3>1. Choose a template</h3><p>Select from four layouts. You can switch later without losing details.</p></article><article><h3>2. Add your details</h3><p>Use sample data or enter each section yourself. Repeatable items can be added or removed.</p></article><article><h3>3. Print as PDF</h3><p>Choose Download CV as PDF, then select Save as PDF in your browser print dialog.</p></article></div></section>
+  </main>
+  <footer><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">B</span><strong>BlueCV Builder</strong></a><p>Your CV data remains private and local to this browser.</p></footer>
+  <dialog id="confirmDialog" aria-labelledby="confirmTitle" aria-describedby="confirmMessage"><div class="dialog-content"><h2 id="confirmTitle">Confirm action</h2><p id="confirmMessage"></p><div class="dialog-actions"><button class="button secondary" id="confirmCancel" type="button">Cancel</button><button class="button primary" id="confirmContinue" type="button">Continue</button></div></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>

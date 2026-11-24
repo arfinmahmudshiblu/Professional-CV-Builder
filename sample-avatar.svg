@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Neutral profile avatar</title>
+  <desc id="desc">A simple neutral illustration for a CV profile placeholder</desc>
+  <rect width="240" height="240" rx="120" fill="#EFF6FF"/>
+  <circle cx="120" cy="88" r="48" fill="#93C5FD"/>
+  <path d="M44 220c8-55 39-82 76-82s68 27 76 82" fill="#2563EB"/>
+  <path d="M83 79c7-32 27-48 49-48 24 0 43 18 46 48-17-11-33-16-48-16-16 0-31 5-47 16z" fill="#1E3A8A" opacity=".18"/>
+</svg>
